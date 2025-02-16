@@ -5,8 +5,8 @@ function Food() {
     return(
         <ul>
             <li>Apple</li>
-            <li></li>
-            <li></li>
+            <li>{food1}</li>
+            <li>{food2}</li>
         </ul>
     );
 }

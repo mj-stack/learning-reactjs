@@ -3,12 +3,11 @@ body {
   font-family: Arial;
 }
 
-.button {
-  margin: 20px;
-  background-color: hsl(200, 100%, 50%);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+.student {
+  font-size: 2em;
+  padding: 10px;
+  border: 1px solid hsla(0, 0%, 50%, 0.8);
+}
+.student p {
+  margin: 0;
 }

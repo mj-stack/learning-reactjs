@@ -1,22 +1,20 @@
-.counter {
-  border: 2px solid;
-  text-align: center;
+body {
+  font-family: Arial;
+  margin: 0;
   padding: 25px;
-  max-width: 300px;
-  margin: auto;
-}
-.count {
-  font-family: monospace;
-  font-size: 10rem;
+  text-align: center;
 }
 
-.buttons button {
-  font-size: 1rem;
-  margin-right: 5px;
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: none;
-  background-color: hsl(191, 89%, 37%);
-  color: white;
-  cursor: pointer;
+.color-display {
+  height: 200px;
+  width: 200px;
+  border: 5px solid hsl(0, 0%, 80%);
+  border-radius: 8px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.25s ease;
 }

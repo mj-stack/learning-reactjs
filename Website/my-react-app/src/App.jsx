@@ -1,10 +1,13 @@
-import DigitalClock from "./DigitalClock";
+import ComponentA from "./ComponentA";
+import ComponentB from "./ComponentB";
+import ComponentC from "./ComponentC";
+import ComponentD from "./ComponentD";
 
 function App() {
 
    return(
     <>
-      <DigitalClock />
+      <ComponentA />
     </>
   );
 }

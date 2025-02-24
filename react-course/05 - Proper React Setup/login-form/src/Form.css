@@ -1,0 +1,37 @@
+.form-title {
+  font-size: 20px;
+}
+.email-input {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border-width: 1px;
+  outline: none;
+}
+.password-input {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border-width: 1px;
+  outline: none;
+  margin-right: 10px;
+}
+.password-input-container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.show-password-btn {
+  background-color: rgb(0, 153, 0);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn {
+  background-color: rgb(0, 123, 255);
+  color: white;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

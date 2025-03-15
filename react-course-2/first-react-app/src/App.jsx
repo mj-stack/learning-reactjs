@@ -1,18 +1,17 @@
-import Hello from "./Hello"
-import KgButton from "./KgButton"
-import Random from "./Random"
 
 function App() {
   return (
-  <>
-    <h1>This is the best react course</h1>
-    <KgButton />
-    <Hello />
-    <Random />
-    <Random />
-    <Random />
-    <Random />
-  </>)
+    <>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+      <button type="button" class="btn btn-link">Link</button>
+    </>)
 }
 
 export default App

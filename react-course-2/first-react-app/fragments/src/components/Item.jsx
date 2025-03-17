@@ -1,16 +1,12 @@
 import styles from './item.module.css'
 
-function Item({food}) {
-
-  const handleBuyButtonClicked = () => {
-    console.log(`${food} being bought`)
-  } 
+function Item({food, bought, handleBuyButton}) { 
 
   return (
-    <li className={`${styles['kg-item']} list-group-item`}>
+    <li className={`${styles['kg-item']} list-group-item ${bought && 'active'}`}>
       <span className={`${styles['kg-span']}`}>{food}</span>
-      <button className={`${styles.button} btn btn-info`}
-        onClick={handleBuyButtonClicked}
+      <button value={false} className={`${styles.button} btn btn-info`}
+        onClick={handleBuyButton}
       >Buy</button>
     </li>
   )

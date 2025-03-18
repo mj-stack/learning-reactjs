@@ -1,3 +1,5 @@
+import { RiDeleteBack2Fill } from "react-icons/ri";
+
 function TodoItem({todoName, todoDate, handleDeleteItem}) {
   return(
     <div className="container">
@@ -9,7 +11,7 @@ function TodoItem({todoName, todoDate, handleDeleteItem}) {
           {todoDate}
         </div>
         <div className="col-2">
-          <button type="button" onClick={() => handleDeleteItem(todoName)} className="btn btn-danger kg-button">Delete</button>
+          <button type="button" onClick={() => handleDeleteItem(todoName)} className="btn btn-danger kg-button"><RiDeleteBack2Fill /></button>
         </div>
       </div>
     </div>

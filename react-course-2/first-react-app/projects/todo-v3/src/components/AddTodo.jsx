@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { BiMessageAdd } from "react-icons/bi";
 
 function AddTodo({handleNewItem}) {
 
@@ -27,7 +28,7 @@ function AddTodo({handleNewItem}) {
           <input onChange={handleDateChange} type="date" required />
         </div>
         <div className="col-2">
-          <button type="button" onClick={handleAddButtonClick} className="btn btn-success kg-button">Add</button>
+          <button type="button" onClick={handleAddButtonClick} className="btn btn-success kg-button"><BiMessageAdd /></button>
         </div>
       </div>
     </div>

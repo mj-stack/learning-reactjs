@@ -5,7 +5,13 @@ function TodoItems({todoItems, handleDeleteItem}) {
   return (
       <div className={styles.itemsContainer}>
         {
-          todoItems.map(item => <TodoItem handleDeleteItem={handleDeleteItem} key={item.name} todoName={item.name} todoDate={item.dueDate} />)
+          todoItems.map(item => 
+            <TodoItem 
+              handleDeleteItem={handleDeleteItem} 
+              key={item.name} 
+              todoName={item.name} 
+              todoDate={item.dueDate} 
+            />)
         }
       </div>
   )

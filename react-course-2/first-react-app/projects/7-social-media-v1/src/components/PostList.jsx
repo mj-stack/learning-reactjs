@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import Post from "./Post"
 import {PostList as PostListData} from "../store/post-list-store"
 import WelcomMessage from "./WelcomeMessage"
@@ -6,18 +6,18 @@ import WelcomMessage from "./WelcomeMessage"
 const PostList = () => {
   const {postList, addInitialPosts} = useContext(PostListData)
 
-  const onGetPostsClick = () => {
+  useEffect(() => {
     fetch('https://dummyjson.com/posts')
     .then(res => res.json())
     .then(data => {
       addInitialPosts(data.posts)
     })
-  }
+  }, [])
 
   return(
     <>
     {
-      postList.length === 0 && <WelcomMessage onGetPostsClick={onGetPostsClick} />
+      postList.length === 0 && <WelcomMessage />
     }
     {
       postList.map((post) => (

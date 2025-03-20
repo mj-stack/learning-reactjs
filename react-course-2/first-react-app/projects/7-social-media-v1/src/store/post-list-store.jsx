@@ -4,22 +4,34 @@ import { createContext, useReducer } from "react";
 export const PostList = createContext({
   postList: [],
   addPost: () => {},
-  deletePost: () => {}
+  deletePost: () => {},
+  addInitialPosts: () => {}
 })
 
 const postListReducer = (currentPostList, action) => {
   let newPostList = currentPostList
   if (action.type === "DELETE_POST") {
     newPostList = currentPostList.filter((post) => post.id !== action.payload.postId)
+  } else if (action.type === "ADD_INITIAL_POSTS") {
+    newPostList = action.payload.posts
   } else if (action.type === "ADD_POST") {
     newPostList = [action.payload, ...currentPostList]
-  }
+  } 
   return newPostList
 }
 
 const PostListProvider = ({children}) => {
 
-  const [postList, dispatchPostList] = useReducer(postListReducer, DEFAULT_POST_LIST)
+  const [postList, dispatchPostList] = useReducer(postListReducer, [])
+
+  const addInitialPosts = (posts) => {
+    dispatchPostList({
+      type: 'ADD_INITIAL_POSTS',
+      payload: {
+        posts
+      }
+    })
+  }
 
   const addPost = (userId, postTitle, postBody, reactions, tags) => {
     dispatchPostList({
@@ -33,7 +45,6 @@ const PostListProvider = ({children}) => {
         tags: tags
       }
     })
-    console.log(userId, postTitle, postBody, reactions, tags);
   }
 
   const deletePost = (postId) => {
@@ -46,29 +57,10 @@ const PostListProvider = ({children}) => {
   }
 
   return (
-    <PostList.Provider value={{ postList, addPost, deletePost }}>
+    <PostList.Provider value={{ postList, addPost, deletePost, addInitialPosts }}>
       {children}
     </PostList.Provider>
   )
 }
-
-const DEFAULT_POST_LIST = [
-  {
-    id: '1',
-    title: 'Going to Mumbai',
-    body: 'Hi Friends, I am going to Mumbai fro my vacations. Hope to enjoy a lot. Peace out.',
-    reactions: 2,
-    userId: 'user-9',
-    tags: ['vacation', 'mumbai', 'enjoying']
-  },
-  {
-    id: '2',
-    title: 'Pass ho gya bhhai',
-    body: '4 sall ki masti ke baad bhi ho gye hai pass. Hard to beleive',
-    reactions: 15,
-    userId: 'user-12',
-    tags: ['graduating', 'unbelievable', 'studying']
-  }
-]
 
 export default PostListProvider

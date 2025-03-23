@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <main>
       <div className="items-container">
-        {items[0].map((item, i) => (
+        {items.map((item, i) => (
           <HomeItem key={i} item={item} />
         ))}
       </div>
